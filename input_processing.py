@@ -72,7 +72,7 @@ def print_message(sensor):
         print("\nProceed\n")
     elif sensor.traffic_light == "yellow" and sensor.pedestrian == "no" and sensor.vehicle == "no":
         print("\nCaution\n")
-    print("Light = " + sensor.traffic_light + " , Pedestrian = " + sensor.pedestrian + " , Vehicle = " + sensor.vehicle + " .\n")
+    print(f"Light = {sensor.traffic_light} , Pedestrian = {sensor.pedestrian} , Vehicle = {sensor.vehicle} .\n")
 
 
 """
@@ -107,14 +107,14 @@ def main():
             if sensor_input == 0:
                 break
             elif sensor_input == 1:
-                select_Traffic = (input("What change has been identified?: ")).strip()
+                select_Traffic = input("What change has been identified?: ").strip()
                 sensorApp.update_status(sensor_input, select_Traffic)
             elif sensor_input == 2:
-                select_pedestrian = (input("What change has been identified?: ")).strip()
+                select_pedestrian = input("What change has been identified?: ").strip()
                 sensorApp.update_status(sensor_input, select_pedestrian)
             elif sensor_input == 3:
-                select_vehicle_staus = (input("What change has been identified?: ")).strip()
-                sensorApp.update_status(sensor_input, select_vehicle_staus) 
+                select_vehicle_status = input("What change has been identified?: ").strip()
+                sensorApp.update_status(sensor_input, select_vehicle_status) 
         except ValueError as e:
             print(e)
         print_message(sensorApp)
